@@ -1,0 +1,103 @@
+\documentclass{report}
+
+\input{preamble}
+\input{macros}
+\input{letterfonts}
+
+\title{\Huge{Review over some Math} \\ \vspace{1cm} \normalsize{Notes on the book `All the Math You Missed But Need to Know for Graduate School' by Thomas A. Garrity}, \\ along with some personal thoughts and excercise solutions.}
+\author{\huge{José Daniel Mejía C.}}
+\date{2026}
+
+\begin{document}
+
+\maketitle
+\newpage% or \cleardoublepage
+% \pdfbookmark[<level>]{<title>}{<dest>}
+\pdfbookmark[section]{\contentsname}{toc}
+\tableofcontents
+\pagebreak
+
+\chapter{Summary over topics}
+\section{Structure of mathematics}
+\subsection{Equivalence problems}
+
+\nt{The concept of two objects being the same depends on the field of study.}
+
+
+\textbf{Equivalence} between two objects can be explained by the allowed Maps or functions between them.
+
+\ex{}{A square and a circle are equivalent in topology; they can be stretched out from one to the other.
+\\
+They are not the same in differential geometry; one is smooth (differentiable) and the other is not.}
+
+\textbf{Invariants} are properties that two or more object must satisfy if they are equivalent, however they themselves do not determine equivalence between them.
+
+\ex{}{In topology, two circles are not equivalent to a single circle. The two circles have two connected components, whereas the one only has one connected component. Hence, both objects are not equivalent.
+\\
+However, a sphere and a circle have the same number of connected components, but they are not equivalent.}
+
+\subsection{Functions}
+Functions describe all kinds of situations, both in the real world and in an abstract matter.
+
+Each field of study or area in mathematics focuses in a specific kind of function. Calculus studies differentiable functions fron $\mathbb{R} \to \mathbb{R}$, for example.
+
+\pagebreak
+
+\section{Topics}
+
+\subsection{Linear Algebra}
+Linear algebra studies \textbf{Linear Transformations} and \textbf{Vector Spaces}. A linear transformation has a matrix representation, given a basis for the vector space being considered.
+
+Two or more different matrices can represent the same transformation, but over different choices of bases of the same vector space.
+
+The key theorem in linear algebra explains several equivalent descriptions for when a matrix, an hence the associated transformation, is invertible.
+
+Other important aspect is understanding the occurrence and usefulness of eigenvectors and eigenvalues.
+
+\subsection{Real Analysis}
+The definitions of \textbf{Limit}, \textbf{Continuity}, \textbf{Differentiation} and \textbf{Integration} are given in terms of $\epsilon$ and $\delta$. \textbf{Uniform Convergence} of functions is a key part of this topic.
+
+\subsection{Differentiating Vector-Valued Functions}
+The \textbf{Inverse Function Theorem} explains that a differentiable function $f : \mathbb{R} \to \mathbb{R}^n$ is invertible iff the determinant of its derivative (the Jacobian) is never zero.
+
+It is important to understand what it means for a vector-valued function to be differentiable, and why its derivative must always be a linear map, represented by the Jacobian as a matrix.
+
+Understanding the \textbf{Implicit function theorem} and how it relates to the Inverse Function Theorem is also relevant.
+
+\subsection{Point Set Topology}
+The concept of \textbf{Open Sets} and how a \textbf{Topology} can be built in terms of open sets must be understood. Also how a function is said to be \textbf{Continuous} in terms of open sets is key.
+
+The standard topology in $\mathbb{R}^n$ and the \textbf{Heine-Borel Theorem} is covered, as well as what a metric space is and how a topology is defined using its metric.
+
+\subsection{Classical Stokes' Theorem}
+The calculus of vector fields covers the \textbf{Curl}, and \textbf{Divergence} of vector fields, the \textbf{Gradient} of a function and the \textbf{Path Integral} along a curve.
+
+The \textbf{Divergence Theorem} and \textbf{Stokes' Theorem} are presented as classical extensions of the Fundamental Theorem of Calculus, it is relevant to understand why they are indeed extensions of this classic theorem.
+
+\subsection{Differential Forms and Stokes' Theorem}
+\textbf{Manifolds} are geometric objects. \textbf{Differential $k$-forms} allows calculus to be done on manifolds. There are several ways to define a manifold. How to think about and define differential $k$-forms, and how to take their \textbf{external derivative} is important.
+
+Differential $k$-forms and external derivatives can be represented using vector fields, gradients, curls and divergences.
+
+The statement of \textbf{Stokes' Theorem} in this context is covered, and special cases over the Divergence Theorem and Stokes' Theorem seen before.
+
+\subsection{Curvature for Curves and Surfaces}
+\textbf{Curvature} is a measure of the rate of change of the direction of tangent spaces of several geometric objects.
+
+It is relevant to compute the curvature of curves on a plane, the curvature and torsion of a curve in space, and the two principal curvatures of a surface in space, in terms of the Hessian. 
+
+\subsection{Geometry}
+Different axioms build several geometries. For example, euclidean geometry assumes that given a line $l$ and a point $p$ not on $l$, there is exactly only one other line containing $p$ parallel to $l$. Elliptic and hyperbolic geometries assume different conditions.
+
+Models for hyperbolic geometry, single elliptic geometry and double elliptic geometry are covered.
+
+\subsection{Countability and the Axiom of Choice}
+The concept of a \textbf{Countably Infinite} set is presented. For example, the Integers and Rationals are, while the Real numbers are not.
+
+The statement of \textbf{The Axiom of Choice} and its (sometimes weird) equivalences should be covered.
+
+\subsection{Elementary Number Theory}
+An introduction to \textbf{Modular Arithmetic} is given. Importan explanations as why there are infinitely many primes, what is a \textbf{Diophintine Equation}, what is the \textbf{Euclidean Algorithm} and how it is linked to \textbf{Continuous Fractions} are covered.
+
+
+\end{document}
