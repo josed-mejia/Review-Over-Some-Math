@@ -13,4 +13,17 @@
 \contentsline {subsection}{\numberline {1.2.8}Geometry}{4}{subsection.1.2.8}%
 \contentsline {subsection}{\numberline {1.2.9}Countability and the Axiom of Choice}{4}{subsection.1.2.9}%
 \contentsline {subsection}{\numberline {1.2.10}Elementary Number Theory}{4}{subsection.1.2.10}%
+\contentsline {subsection}{\numberline {1.2.11}Algebra}{4}{subsection.1.2.11}%
+\contentsline {subsection}{\numberline {1.2.12}Algebraic Number Theory}{4}{subsection.1.2.12}%
+\contentsline {subsection}{\numberline {1.2.13}Complex Analysis}{4}{subsection.1.2.13}%
+\contentsline {subsection}{\numberline {1.2.14}Analytic Number Theory}{4}{subsection.1.2.14}%
+\contentsline {subsection}{\numberline {1.2.15}Lebesgue Integration}{4}{subsection.1.2.15}%
+\contentsline {subsection}{\numberline {1.2.16}Fourier Analysis}{5}{subsection.1.2.16}%
+\contentsline {subsection}{\numberline {1.2.17}Differential Equations}{5}{subsection.1.2.17}%
+\contentsline {subsection}{\numberline {1.2.18}Combinatorics and Probability Theory}{5}{subsection.1.2.18}%
+\contentsline {subsection}{\numberline {1.2.19}Algorithms}{5}{subsection.1.2.19}%
+\contentsline {subsection}{\numberline {1.2.20}Category Theory}{5}{subsection.1.2.20}%
+\contentsline {chapter}{\numberline {2}Linear Algebra}{6}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Basic concepts}{6}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Vector Spaces and Linear Transformations}{7}{section.2.2}%
 \contentsfinish 

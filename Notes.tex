@@ -1,5 +1,7 @@
 \documentclass{report}
 
+\usepackage[shortlabels]{enumitem}
+
 \input{preamble}
 \input{macros}
 \input{letterfonts}
@@ -20,6 +22,8 @@
 \chapter{Summary over topics}
 \section{Structure of mathematics}
 \subsection{Equivalence problems}
+
+Several problems or fields of study in math come down to seeing if two or more objects are the `same', or detecting their differences.
 
 \nt{The concept of two objects being the same depends on the field of study.}
 
@@ -99,5 +103,225 @@ The statement of \textbf{The Axiom of Choice} and its (sometimes weird) equivale
 \subsection{Elementary Number Theory}
 An introduction to \textbf{Modular Arithmetic} is given. Importan explanations as why there are infinitely many primes, what is a \textbf{Diophintine Equation}, what is the \textbf{Euclidean Algorithm} and how it is linked to \textbf{Continuous Fractions} are covered.
 
+\subsection{Algebra}
+\textbf{Groups} and their properties should be studied, as well as understanding how these represent geometric symmetries. Basics over Groups, \textbf{Rings} and \textbf{Fields} are covered. 
 
+\textbf{Galois Theory} explains how finding the roots of polynomials and finite group theory are linked. \textbf{Representation Theory} is also covered, establishing a relation between abstract groups and groups of matrices.
+
+\subsection{Algebraic Number Theory}
+Definitions and examples of \textbf{Algebraic Number Fields} are presented. Each of these have themselves an analog of the integers, but not always do these integers have a unique factorization.
+
+\subsection{Complex Analysis}
+Complex Analysis presents what it means for a function $f: U \subseteq \mathbb{C} \to \mathbb{C}$ to be \textbf{Analytic}, and equivalent conditions that imply analyticity; featuring the \textbf{Cauchy-Riemann Equations} and the \textbf{Cauchy Integral Formula}.
+
+An analytic function $f:U\to \mathbb{C}$ such that $f'(z_0) \neq 0$, then at $z_0$ the function $f$ is \textbf{Conformal}, (angle preserving), when viewed as a function from $\mathbb{R}^2$ to $\mathbb{R}^2$.
+
+\subsection{Analytic Number Theory}
+The definition of the \textbf{Riemann Zeta Function}, its relation to prime numbers, and the statement of the \textbf{Riemann Hypothesis} are presented.
+
+\subsection{Lebesgue Integration}
+The concepts of \textbf{Lebesgue Measure} and \textbf{Lebesgue Integration} are presented, as well as the \textbf{Lebesgue Dominating Convergence Theorem}. It is important to cover what a set of measure zero is, and what the `almost everywhere' notion means.
+
+\subsection{Fourier Analysis}
+It is important to understand how to find the \textbf{Fourier Series} of a periodic function, the \textbf{Fourier Integral} of a function, the \textbf{Fourier Transform}, and how they all relate to \textbf{Hilbert Spaces}. Their use in helping solve differential equations is also relevant.
+
+\subsection{Differential Equations}
+Several real world problems can be modeled by systems of differential equations. Almost all \textbf{Ordinary Differential Equations} have solutions (and simple formulas for them). In contrast, \textbf{Partial Differential Equations} do not have general solutions, only in very specific cases; furthermore, sometimes it is not know if there even exists a solution for them.
+
+Important classes of partial differential equations are the heat equation, the wave equation and the Laplacian.
+
+\subsection{Combinatorics and Probability Theory}
+Elementary combinatorics and probability theory are covered. The \textbf{Binomial Theory} for polynomials is very useful for computations, and occasionally appears as a steps for proofs in several branches of mathematics.
+
+\textbf{Sample Spaces} and \textbf{Random Variables}, \textbf{Expected Value} and \textbf{Variance} are key concepts. The \textbf{Central Limit Theorem} links integral calculus to the subject.
+
+\subsection{Algorithms}
+Understanding what the \textbf{Complexity} of an algorithm is, and the question \textbf{P=NP} is relevant. Some graph theory and algorithms over graphs are covered, as well as why graphs are relevant in the representation of problems.
+
+\textbf{Numerical Analysis} algorithms and methods are important for computing approximations for problems in mathematics.
+
+\subsection{Category Theory}
+Category Theory is a method for thinking about mathematics. Each area of mathematics could be put in the language of categories, being described by its relevant mathematical objects and the morphisms between them, with the results being described by diagrams of arrows.
+
+\pagebreak
+
+\chapter{Linear Algebra}
+
+\nt{The basic mathematical object is a \textbf{Vector Space}, the basic map is a \textbf{Linear Transformation}, and the objective is to find equivalent conditions for \textbf{Invertibility of Matrices}}
+
+Linear Algebra is one of the most relevant (if not the most relevant from my experience) area of mathematics. It allows us to solve systems of linear equations. However, as interesting as solving linear equations might be, the power of linear algebra comes when the abstraction of several different mathematical objects can be represented as vector spaces, hence they can be modified and mapped to and from by linear transformations.
+
+Here, solving the systems (and knowing when a solution for them exists) becomes way more interesting.
+
+\section{Basic concepts}
+
+$\mathbb{R}^n$ is the most basic example of a vector space. It is the set of all $n$-tuples of real numbers
+
+$$
+\lbrace \left( x_1, \dots, x_n \right) \ : \ x_i \in \mathbb{R} \rbrace
+$$
+
+Each $n$-tuple is usually called a \textbf{vector}, and two can be added to get another one
+
+$$
+\left( x_1, \dots, x_n \right) +\left( y_1, \dots, y_n \right) = \left( x_1 + y_1, \dots, x_n + y_n \right) 
+$$
+
+or they could be multiplied by a number \(\lambda\), usually called a \textbf{scalar}.
+
+$$
+\lambda\left( x_1, \dots, x_n \right) = \left( \lambda x_1, \dots, \lambda x_n \right)  
+$$
+
+The natural map from some $\mathbb{R}^n$ to a $\mathbb{R}^m$ is matrix multiplication by a $n \times m$ matrix. Matrix multiplication is \textbf{linear}.
+
+\ex{Left Matrix Multiplication}{
+$$
+\begin{pmatrix}
+	1 & 1 \\
+	1 & 1 \\
+	1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+	2 \\ 
+	3
+\end{pmatrix}
+=
+\begin{pmatrix}
+	5 \\
+	5 \\
+	2
+\end{pmatrix}
+$$
+
+Where $\begin{pmatrix}
+	2 \\ 
+	3
+\end{pmatrix} \in \mathbb{R}^2 \text{ and } \begin{pmatrix}
+5 \\
+5 \\
+2
+\end{pmatrix} \in \mathbb{R}^3$.}
+
+\pagebreak
+
+Systems of linear equations can be expressed as a left matrix multiplication. Our goal is to find the correct value for each $x_i$.
+
+\begin{align*}
+	a_{11}x_1 + \dots + a_{1n}x_n &= b_1 \\
+	& \ \vdots \\
+	a_{m1}x_1 + \dots + a_{mn}x_n &= b_m
+\end{align*}
+
+This system becomes $Ax = b$, where
+
+$$
+	A = \begin{pmatrix}
+		a_{11} \dots a_{1n} \\
+		\vdots \\
+		a_{m1} \dots a_{mn}
+	\end{pmatrix}, \quad
+	x = \begin{pmatrix}
+		x_1 \\
+		\vdots \\
+		x_n
+	\end{pmatrix}, \quad
+	b = \begin{pmatrix}
+		b_1 \\
+		\vdots \\
+		b_m
+	\end{pmatrix}
+$$
+
+When $m>n$ (more equations than unknown variables) there are usually no solutions to the system (except in some linearly dependent cases). Conversely, when $m<n$, we expect to have several solutions.
+
+The most common situation though, is when $m = n$. In this case, finding if an inverse to $A$, $A^{-1}$ exists is our objective, because then finding the vector $x$ is very straightforward.
+
+$$
+Ax = b \quad \implies \quad A^{-1}Ax = A^{-1}b \quad \implies \quad x = A^{-1}b
+$$
+
+Hence, finding when a square matrix has an inverse is the same as determining when an $n\times n$ system of linear equations has a solution.
+
+\section{Vector Spaces and Linear Transformations}
+ \dfn{Vector Space}{
+ 
+ A set $V$ is a \textbf{Vector Space} over a field $K$ (usually $\mathbb{R}$ or $\mathbb{C}$) if there are maps:
+ 
+ \begin{enumerate}
+ 	\item $\cdot \ : K \times V \to V$ multiplication by scalar, $av$ for $a \in K, \ v \in V$
+ 	\item $+ : V \times V \to V$ vector sum, $v + u$ for $v, u \in V$
+ \end{enumerate}
+ 
+ with the properties:
+ \begin{enumerate}[(a)]
+ 	\item $\exists 0 \in V \ : \ 0 + v = v \ \forall v\in V$
+ 	\item $\forall v \in V \ \exists \left( -v\right)  \in V \ : \left( -v\right)  + v = 0$
+ 	\item $\forall v, u \in V \ v+u = u+v$
+ 	\item $\forall v,u \in V, \ \forall a \in K \ a(u + v) = au + av$
+ 	\item $\forall v \in V, \ \forall a,b \in K \ a(bv) = (ab)v$
+ 	\item $\forall v \in V, \ \forall a,b \in K \ (a+b) = av + bv$
+ 	\item $\exists 1 \in K \ \forall v \in V \ 1v = v$
+ \end{enumerate}
+ }
+ 
+ These are all usual properties easily recognizable in the vector space $\mathbb{R}^n$ over the field $\mathbb{R}$.
+ 
+ \dfn{Linear Transformation}{
+ A \textbf{Linear Transformation} $T$ is a map from any vector space $V$ to any other vector space $W$, such that
+ 
+ $$
+ T(a_1u + a_2v) = a_1T(u) + a_2T(v)
+ $$
+ 
+ for any two vectors and scalars.
+ }
+ 
+ Left matrix multiplications as seen before is a linear transformation.
+ 
+ \dfn{Subspace}{
+ A subset \(U \subset V\) is a \textbf{Subspace} if it itself is a vector space.
+ }
+ 
+ It is way easier to check this condition however,
+ 
+ \mprop{
+ \(U \subset V\) is a subspace if it contains the zero vector and it's closed under addition and scalar multiplication
+ }
+ 
+ Given a linear transformation $T$ from a vector space \(V\) to another \(W\), two natural subspaces are the kernel and image.
+ 
+ \dfn{Kernel \& Image of a Linear Map}{
+ Given a linear map \(T:V \to W\), its \textbf{Kernel} is 
+ \[
+ \ker(T) = \{ v \in V \ \mid \ T(v) = 0 \in W\}
+ \]
+ and its \textbf{Image} is
+ \[
+ \text{Im}(T) = \{ T(v) \in W \ \mid \ v \in V\}
+ \]
+ }
+ 
+ Clearly both are subsets of \(V\) and \(W\) respectively, and closed under addition and multiplication by scalars.
+ 
+ \ex{Derivative as linear map}{
+ 	In the vector space \(C^k[0,1]\), the set of all real-valued functions with domain over \([0,1]\) such that the \(k\)th derivative exists and is continuous, the derivative is a linear transformation from \(C^k[0,1]\) to \(C^{k-1}[0,1]\).
+ 	
+ 	\[
+ 	\frac{d}{dx} : C^k[0,1] \to C^{k-1}[0,1]
+ 	\]
+ 	
+ 	Then the kernel of this linear transformation are all constant functions.
+ 	
+ 	For example, in the differential equation
+ 	\[
+ 	f'' + 3f' + 2f = 0
+ 	\]
+ 	we can define the linear map
+ 	\[
+ 	T = \frac{d^2}{dx^2} + 3\frac{d}{dx} + 2I \ : \ C^2[0,1] \to C^0[0,1]
+ 	\]
+ 	Hence, the solution lies in \(\ker(T)\).
+ }
+ 
 \end{document}
