@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.29)  2 FEB 2026 19:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.29)  3 FEB 2026 13:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1795,9 +1795,9 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Font Warning: Font shape `OT1/cmr/b/n' in size <5.5> not available
 (Font)              size <5> substituted on input line 895.
 
-[14]
+[14] [15] [16]
 \g__tikzsymbols_savebox_F_0 g 0 G_10_Laughey_1_none_none_box=\box147
- [15] (Notes.aux)
+ [17] [18] [19] (Notes.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-29>
@@ -1812,10 +1812,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 46285 strings out of 467871
- 1066106 string characters out of 5413536
- 1659804 words of memory out of 5000000
- 74279 multiletter control sequences out of 15000+600000
+ 46329 strings out of 467871
+ 1066771 string characters out of 5413536
+ 1659850 words of memory out of 5000000
+ 74301 multiletter control sequences out of 15000+600000
  668100 words of font info for 151 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,13n,118p,778b,2193s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1840,9 +1840,9 @@ m/cmssbx10.pfb><C:/Users/JoseDanielMejia/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/newpx/pxmiaX.pfb><C:/Users/JoseDanielMejia/AppData/Local/Programs/Mi
 KTeX/fonts/type1/public/newpx/pxsys.pfb><C:/Users/JoseDanielMejia/AppData/Local
 /Programs/MiKTeX/fonts/type1/public/newtx/txexs.pfb>
-Output written on Notes.pdf (16 pages, 305548 bytes).
+Output written on Notes.pdf (20 pages, 324843 bytes).
 PDF statistics:
- 499 PDF objects out of 1000 (max. 8388607)
- 105 named destinations out of 1000 (max. 500000)
- 489 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 549 PDF objects out of 1000 (max. 8388607)
+ 127 named destinations out of 1000 (max. 500000)
+ 505 words of extra memory for PDF output out of 10000 (max. 10000000)
 

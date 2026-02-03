@@ -912,6 +912,180 @@ Hence, finding when a square matrix has an inverse is the same as determining wh
  }
  
  The definitions of the determinant and transpose of a linear transformation directly depend on a choice of basis. However, the fact that \(\det(T) \neq 0\) does \textbf{not} depend on the basis chosen. Linear independence does not rely on choice of basis either.
+ \pagebreak
+ 
+ \section{Similar Matrices}
+ 
+ When choosing a basis for an \(n\)-dimensional vector space \(V\), any linear map \(T: V \to V\) can be represented by an \(n\times n\) matrix. However, if the choice of basis changes, then the matrix representation of the same linear map will change as well.
+ 
+ Two matrices that represent the same linear transformation under different bases will be \textbf{similar}.
+ 
+ \dfn{Similar Matrices}{
+ Two \(n \times n\) matrices \(A,B\) are \textbf{Similar} if there is an invertible matrix \(C\) such that
+ 
+ \[
+ A = C^{-1}BC
+ \]
+ }
+ 
+ Given two bases for \(V\), \(\beta\) and \(\gamma\), and any \(v \in V\), we need a matrix such that
+ 
+ \[
+ C[v]_\beta=[v]_\gamma
+ \]
+ 
+ The matrix that makes this possible is
+ 
+ \[
+ C = \begin{pmatrix}
+ 	\mid &  & \mid \\
+ 	[\gamma_1]_\beta & \dots & [\gamma_n]_\beta \\
+ 	\mid &  & \mid
+ \end{pmatrix}
+ \]
+ 
+ Then if \(T: V \to V\), \(A=[T]_\beta, \ B=[T]_\gamma\), and we have \(CA = BC\) or \(A = C^{-1}BC\), then \(A\) and \(B\) are similar.
+ 
+ \ex{Similar Matrices}{
+ Let us see the same linear map under two different bases.
+ 
+ Let \(f: \RR[2] \to \RR[2]\) such that \(f\begin{pmatrix}
+ 	x \\
+ 	y
+ \end{pmatrix} = \begin{pmatrix}
+ 2x \\
+ x
+ \end{pmatrix}\).
+ 
+ Under the usual basis, \(E = \left\{ \colvec{1\\0}, \colvec{0\\1} \right\}\),
+ 
+ \[
+ [f]_E^E =
+ \begin{pmatrix}
+ 	2 & 0 \\
+ 	1 & 0
+ \end{pmatrix}
+ \]
+ 
+ Under the basis \(\beta = \left\{ \colvec{0\\1}, \colvec{1\\1} \right\}\)
+ 
+ \[
+ f\colvec{0\\1} = \colvec{0\\0}, \qquad f\colvec{1\\1} = \colvec{2\\1}
+ \]
+ 
+ \[
+ \left[f\colvec{0\\1}\right]_\beta = \colvec{0\\0}, \qquad \left[f\colvec{1\\1}\right]_\beta = \left[\colvec{2\\1}\right]_\beta = \colvec{-1\\2}
+ \]
+ Then,
+ \[
+ [f]_\beta^\beta =
+ \begin{pmatrix}
+ 	0 & -1 \\
+ 	0 & 2
+ \end{pmatrix}
+ \]
+ 
+ Our matrix \(C\) is:
+ 
+ \[
+ E_1 = \colvec{1\\0} = -\colvec{0\\1} + \colvec{1\\1} = -\beta_1 + \beta_2, \quad \implies \quad [E_1]_\beta = \colvec{-1\\1}
+ \]
+ \[
+ E_2 = \colvec{0\\1} = \colvec{0\\1} + 0\colvec{1\\1} = \beta_1 + 0\beta_2, \quad \implies \quad [E_2]_\beta = \colvec{1\\0}
+ \]
+ \[
+ C = 
+ \begin{pmatrix}
+ 	-1 & 1 \\
+ 	1 & 0
+ \end{pmatrix}, \qquad 
+ C^{-1} = 
+ \begin{pmatrix}
+ 	0 & 1 \\
+ 	1 & 1
+ \end{pmatrix}
+ \]
+ 
+ Such that for \(\bma \in \RR[2] \ C[\bma]_E = [\bma]_\beta\)
+ 
+ That way, \([f]_E^E, \ [f]_\beta^\beta\) should be similar.
+ 
+ \[
+ [f]_E^E =
+ \begin{pmatrix}
+ 	2 & 0 \\
+ 	1 & 0
+ \end{pmatrix}
+ =
+ \begin{pmatrix}
+ 	0 & 1 \\
+ 	1 & 1
+ \end{pmatrix}
+ \begin{pmatrix}
+ 	0 & -1 \\
+ 	0 & 2
+ \end{pmatrix}
+ \begin{pmatrix}
+ 	-1 & 1 \\
+ 	1 & 0
+ \end{pmatrix}
+ =
+  C^{-1}[f]_\beta^\beta C
+ \]
+ 
+ }
+ 
+ \section{Eigenvalues and Eigenvectors}
+ 
+ Eigenvalues and eigenvectors can be used to pick a better basis for a particular linear transformation.
+ 
+ \dfn{Eigenvalues and Eigenvectors}{
+ Let \(T: V \to V\) be a linear transformation. Then a non-zero vector \(v\) will be an \textbf{Eigenvector} of \(T\) with \textbf{Eigenvalue} \(\lambda\), a scalar, if
+ 
+ \[T(v) = \lambda v\]
+ 
+ For an \(n \times n\) matrix \(A\), it is the same idea, non-zero column vector \(\bmx \in \RR[n]\) eigenvector with \(\lambda\) eigenvalue if
+ 
+ \[
+ A\bmx = \lambda \bmx
+ \]
+ } 
+ 
+ Geometrically, \(v\) is an eigenvector of \(T\) if \(T\) `stretches' \(v\) by a factor of \(\lambda\).
+ 
+ \mprop{}{
+ A scalar \(\lambda\) will be an \textbf{eigenvalue} of a square matrix \(A\) iff \(\lambda\) is a root of the polynomial
+ 
+ \[
+ P(t) = \det(tI-A)
+ \]
+ }
+ 
+ The polynomial \(P(t)\) is called the \textbf{Characteristic Polynomial}.
+ 
+ \thm{}{
+ Let \(A,B\) be similar matrices, then their characteristic polynomial is the same.
+ }
+ 
+ \cor{}{
+ The Eigenvalues for similar matrices are equal.
+ }
+ 
+ However, this does \textbf{not} imply matrices with the same eigenvalues are similar.
+ 
+ \thm{}{
+ Let \(\nlist{n}{\lambda}\) be the eigenvalues, counted with multiplicity, of a matrix \(A\). Then
+ 
+ \[
+ \det(A) = \lambda_1 \dots \lambda_n
+ \]
+ }
+ 
+ Counting with multiplicity implies counting roots like \(2\) in \(P(x) = (x-2)^3\) three times.
+ 
+ How good a basis is for a transformation depends on how close it is to being diagonal. This is far from being always possible though, but there are techniques that make is slightly better like the Jordan Normal Form.
+ 
+ These all involve finding eigenvalues, their eigenvectors, or their generalized form.
  
  \pagebreak
  \section{Exercises}
@@ -975,7 +1149,96 @@ Hence, finding when a square matrix has an inverse is the same as determining wh
  \]
  
  \Qed
- 
  }
+ 
+ \qs{}{
+ Consider the set of all polynomials in one variable with real coefficients with degree less or equal to \(3\). 
+ \begin{enumerate}[(a)]
+ 	\item Show that this set forms a vector space of dimension four.
+ 	\item Find a basis for this vector space.
+ 	\item Show that differentiating a polynomial is a linear map.
+ 	\item Given the basis in (b), write down the matrix representative of the derivative.
+ \end{enumerate}
+ }
+ \sol{
+ \begin{enumerate}[(a)]
+ 	\item Let \(P_3 = \{ a_0 + a_1x + a_2x^2 + a_3x^3 \mid a_i \in \RR\}\). Manually checking the conditions for a vector space here works. 
+ 	
+ 	The set \(\{1, x, x^2, x^3\}\) is a linearly independent set since 
+ 	 \[
+ 	 a_0 + a_1x + a_2x^2 + a_3x^3 = 0
+ 	 \]
+ 	 does imply \(a_i = 0 \ \forall i\).
+ 	 
+ 	 The set also evidently spans \(P_3\) since all polynomials are already a linear combination of these elements.
+ 	 
+ 	 Since the basis has four elements, \(\dim(P_3) = 4\).
+ 	 
+ 	 \item \(\{1, x, x^2, x^3\}\).
+ 	 \item Let's consider the map \(\frac{d}{dx} : P_3 \to P_2\) defined by
+ 	 
+ 	 \[
+ 	 \frac{d}{dx}(a_0 + a_1x + a_2x^2 + a_3x^3) = a_1 + 2a_2x + 3a_3x^2 
+ 	 \]
+ 	 
+ 	 Given two polynomials in \(P_3\), \(a_0 + a_1x + a_2x^2 + a_3x^3\) and \(b_0 + b_1x + b_2x^2 + b_3x^3\)
+ 	 
+ 	 \begin{align*}
+ 	 	&\phantom{=} \frac{d}{dx}\left( \lambda_1(a_0 + a_1x + a_2x^2 + a_3x^3) + \lambda_2(b_0 + b_1x + b_2x^2 + b_3x^3)\right) \\
+ 	 	&= \frac{d}{dx}\left( (\lambda_1a_0 + \lambda_2 b_0) + (\lambda_1a_1 + \lambda_2b_1)x + (\lambda_1a_2 + \lambda_2b_2)x^2 + (\lambda_1a_3 + \lambda_2b_3)x^3\right) \\
+ 	 	&= (\lambda_1a_1 + \lambda_2b_1) + 2(\lambda_1a_2 + \lambda_2b_2)x + 3(\lambda_1a_3 + \lambda_2b_3)x^2 \\
+ 	 	&= \lambda_1(a_1 + 2a_2x + 3a_3 x^2) +  \lambda_2(b_1 + 2b_2x + 3b_3 x^2)\\
+ 	 	&=  \lambda_1\frac{d}{dx}(a_0 + a_1x + a_2x^2 + a_3x^3) + \lambda_2\frac{d}{dx}(b_0 + b_1x + b_2x^2 + b_3x^3)
+ 	 \end{align*}
+ 	 And \(\frac{d}{dx}\) is linear.
+ 	 \Qed
+ 	 
+ 	 \item Given the bases \(\beta = \{1, x, x^2, x^3\}\) and \(\gamma = \{1, x, x^2\}\) for \(P_3\) and \(P_2\),
+ 	 
+ 	 \[
+ 	 \frac{d}{dx}(1) = 0, \quad
+ 	 \frac{d}{dx}(x) = 1, \quad
+ 	 \frac{d}{dx}(x^2) = 2x, \quad
+ 	 \frac{d}{dx}(x^3) = 3x^2, \quad
+ 	 \]
+ 	 
+ 	 When translating to the basis \(\gamma\),
+ 	 
+ 	 \[
+ 	 \left[\frac{d}{dx}(1)\right]_\gamma = \colvec{0\\0\\0}, \quad
+ 	 \left[\frac{d}{dx}(x)\right]_\gamma = \colvec{1\\0\\0}, \quad
+ 	 \left[\frac{d}{dx}(x^2)\right]_\gamma = \colvec{0\\2\\0}, \quad
+ 	 \left[\frac{d}{dx}(x^3)\right]_\gamma = \colvec{0\\0\\3}, \quad
+ 	 \]
+ 	 
+ 	 So the matrix representation of \(\frac{d}{dx}\) is:
+ 	 
+ 	 \[
+ 	 \left[\frac{d}{dx}\right]_\beta^\gamma = 
+ 	 \begin{pmatrix}
+ 	 	0 & 1 & 0 & 0 \\
+ 	 	0 & 0 & 2 & 0 \\
+ 	 	0 & 0 & 0 & 3
+ 	 \end{pmatrix}
+ 	 \]
+ 	 
+ 	 Using it on \(p(x) = 3 + 7x + 5x^3\) for example,
+ 	 
+ 	 \[
+ 	 \begin{pmatrix}
+ 	 	0 & 1 & 0 & 0 \\
+ 	 	0 & 0 & 2 & 0 \\
+ 	 	0 & 0 & 0 & 3
+ 	 \end{pmatrix}
+ 	 \colvec{3\\7\\0\\5}
+ 	 =
+ 	 \colvec{7\\0\\15}
+ 	 \]
+ 	 
+ 	 Which corresponds to \(7 + 15x^2\).
+ 	 
+ \end{enumerate}
+ }
+ I had never seen this way of portraying the derivative as a matrix. This must be the way computers do derivatives, unless there is an even more efficient way to do them, matrix multiplication is very costly.
  
 \end{document}
