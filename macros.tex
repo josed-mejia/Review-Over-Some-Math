@@ -29,6 +29,17 @@
 \newcommand{\id}{\text{id}}
 \newcommand{\img}{\text{Im}}
 
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+		\left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+		#1 % the function
+		\littletaller % pretend it's a little taller at normal size
+		\right|_{#2} % this is the delimiter
+}}
+
+\newcommand{\littletaller}{\mathchoice{\vphantom{\big|}}{}{}{}}
+
+\newcommand{\sep}{\noindent\rule{\linewidth}{0.1pt}}
+
 \newcommand{\colvec}[1]{
 	\begin{pmatrix}
 		#1
@@ -36,6 +47,13 @@
 }
 \newcommand{\nlist}[2]{%
 		#2_1, \dots, #2_{#1}
+}
+
+\newcommand{\fgr}[2]{
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=#2\textwidth]{#1}
+\end{figure}
 }
 
 \newcommand{\sol}{\setlength{\parindent}{0cm}\textbf{\textit{Solution:}}\setlength{\parindent}{1cm} }

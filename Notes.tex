@@ -1241,4 +1241,174 @@ Hence, finding when a square matrix has an inverse is the same as determining wh
  }
  I had never seen this way of portraying the derivative as a matrix. This must be the way computers do derivatives, unless there is an even more efficient way to do them, matrix multiplication is very costly.
  
+ \qs{}{
+ Let \(T: V \to W\) be a linear transformation from a vector space \(V\) to a vector space \(W\). Show that \(\img(T)\) is a subspace of \(W\).
+ }
+ 
+ \sol{
+ \(0 \in \img(T)\), since \(T\) is linear, hence \(T(0) = 0\).
+ 
+ If \(w_1, w_2 \in \img(T)\), then there exists \(v_1, v_2\) such that \(T(v_1) = w_1, \ T(v_2) = w_2\). Then,
+ 
+ \[
+ w_1 + w_2 = T(v_1) + T(v_2) = T(v_1 + v_2) \in \img(T)
+ \]
+ 
+ Also, if \(\lambda\) is a scalar,
+ 
+ \[
+ \lambda w_1 = \lambda T(v_1) = T(\lambda v_1) \in \img(T)
+ \]
+ 
+ Due to these criteria \(\img(T)\) is a subspace of \(W\).
+ 
+ \Qed
+ }
+ 
+ \qs{}{
+ Let \(A, B\) be two invertible matrices. Show that
+ 
+ \[
+ (AB)^{-1} = B^{-1}A^{-1}
+ \]
+ }
+ 
+ \sol{
+ Calculating
+ 
+ \begin{align*}
+ 	(AB)(B^{-1}A^{-1}) &= A(BB^{-1})A^{-1} \\
+ 	&= AIA^{-1} \\
+ 	&= AA^{-1} \\
+ 	&= I
+ \end{align*}
+ 
+ Now the other way,
+ 
+ \begin{align*}
+ 	(B^{-1}A^{-1})(AB) &= B^{-1}(A^{-1}A)B \\
+ 	&= B^{-1}IB \\
+ 	&= BB^{-1} \\
+ 	&= I
+ \end{align*}
+ 
+ Since \((AB)(B^{-1}A^{-1}) = (B^{-1}A^{-1})(AB) = I\), it is clear that \((AB)^-1 = B^{-1}A^{-1}\).
+ 
+ \Qed
+ }
+ 
+ \qs{}{
+ Let
+ 
+ \[
+ A =
+ \begin{pmatrix}
+ 	 2 & -2 \\
+ 	 1 & 5
+ \end{pmatrix}
+ \]
+ 
+ Find a matrix \(C\) such that \(C^{-1}AC\) is diagonal.
+ }
+ 
+ \sol{
+ We first need to find the eigenvalues for the matrix.
+ 
+ \[
+ \det(A-\lambda I) = (2-\lambda)(5-\lambda) + 2 = \lambda^2 -7\lambda + 12 = (\lambda - 3)(\lambda - 4)
+ \]
+ 
+ \[
+ \lambda_1 = 3, \quad \lambda_2 = 4
+ \]
+
+ Since \(Av = \lambda v\), \(Av - \lambda v = 0\), \((Av - \lambda I)v = 0\)
+ 
+ Solving for \(V_1\)
+ 
+ \[
+ (Av - \lambda_1 I \mid 0) = 
+ \left(
+ \begin{array}{cc|c}
+ 	-1 & -2  & 0 \\
+ 	1 & 2  & 0 \\
+ \end{array}
+ \right)
+ \quad \implies \quad
+ \begin{array}{cc|c}
+ 	1 & 2  & 0 \\
+ 	0 & 0  & 0 \\
+ \end{array}
+ \quad \implies \quad v_1 = \colvec{-2\\1}
+ \]
+ 
+ \[
+ (Av - \lambda_2 I \mid 0) = 
+ \left(
+ \begin{array}{cc|c}
+ 	-2 & -2  & 0 \\
+ 	1 & 1  & 0 \\
+ \end{array}
+ \right)
+ \quad \implies \quad
+ \begin{array}{cc|c}
+ 	1 & 1  & 0 \\
+ 	0 & 0  & 0 \\
+ \end{array}
+ \quad \implies \quad v_2 = \colvec{-1\\1}
+ \]
+ 
+ Then,
+ 
+ \[
+ C= 
+ \begin{pmatrix}
+ 	-2 & -1 \\
+ 	1 & 1
+ \end{pmatrix}, \qquad
+ C^{-1} =
+ \begin{pmatrix}
+ 	-1 & -1 \\
+ 	1 & 2
+ \end{pmatrix}
+ \]
+ 
+ Calculating \(C^{-1}AC\)
+ 
+ \[
+ \begin{pmatrix}
+ 	-1 & -1 \\
+ 	1 & 2
+ \end{pmatrix}
+ \begin{pmatrix}
+ 	2 & -2 \\
+ 	1 & 5
+ \end{pmatrix}
+ \begin{pmatrix}
+ 	-2 & -1 \\
+ 	1 & 1
+ \end{pmatrix}
+ =
+ \begin{pmatrix}
+ 	-3 & -3 \\
+ 	4 & 8
+ \end{pmatrix}
+ \begin{pmatrix}
+ 	-2 & -1 \\
+ 	1 & 1
+ \end{pmatrix}
+ =
+ \begin{pmatrix}
+ 	3 & 0 \\
+ 	0 & 4
+ \end{pmatrix}
+ =
+ \begin{pmatrix}
+ 	\lambda_1 & 0 \\
+ 	0 & \lambda_2
+ \end{pmatrix}
+ \]
+ 
+ }
+ 
 \end{document}
